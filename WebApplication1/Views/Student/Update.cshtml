@@ -1,0 +1,53 @@
+﻿
+@using WebApplication1.Models;
+@model Student
+@{
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*Http Verbs - Get Post Put Delete Patch Head*@
+
+<h2>Update Student</h2>
+
+<!--<form action="/student/updatestudent" method="post">
+    <div>
+        <label>Id</label>-->
+@*<input type="text" name="Id" value="@Model.Id"/>*@
+<!--@Html.TextBoxFor(m=>m.Id)
+</div>
+<div>
+    <label>Name</label>-->
+@*<input type="text" name="Name"  value="@Model.Name"/>*@
+<!--@Html.TextBoxFor(m => m.Name)
+    </div>
+
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>-->
+
+<div>
+    @using (Html.BeginForm(actionName: "Updatestudent", controllerName: "Student", method: FormMethod.Post))
+    {
+        <div class="row col-6">
+            <label class="col-form-label">Id</label>
+            @*<input type="text" name="Id" value="@Model.Id" class="form-control"/>*@
+            @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })            
+
+        </div>
+        <div class="row col-6">
+            <label class="col-form-label">Name</label>
+            @*<input type="text" name="Name"  value="@Model.Name"/>*@
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })            
+
+        </div>
+
+        <div class="mt-4 row col-2">
+            <button type="submit" class="btn btn-primary form-control">Save</button>
+        </div>
+
+    }
+</div>
+
+
+
